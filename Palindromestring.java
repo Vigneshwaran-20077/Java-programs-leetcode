@@ -1,0 +1,24 @@
+public class Palindromestring {
+    public boolean isPalindrome(String s) {
+        
+        // Convert to lowercase
+        s = s.toLowerCase();
+        
+        // Remove all non-alphanumeric characters
+        s = s.replaceAll("[^a-z0-9]", "");
+        
+        // Check if the string is palindrome
+        int left = 0;
+        int right = s.length() - 1;
+        
+        while (left < right) {
+            if (s.charAt(left) != s.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        
+        return true;
+    }
+}
